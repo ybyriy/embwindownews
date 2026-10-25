@@ -1,0 +1,1131 @@
+  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        :root{
+            --main_color: #58396C;
+            --second_color:rgb(156, 240, 184);
+            --three_color:#cee2cf;
+            --four_color:#f4f4f4;
+            --box-shadow: 0 4px 8px #3e284c; /* Тень при наведении*/
+
+        }
+        :root {
+            --font-family: "Arial", sans-serif;
+            --padd:1% 0.5% 1% 0.5%;
+        }
+
+        /* Добавьте это в начало вашего CSS, после :root */
+html {
+    scroll-padding-top: 250px; /* Чуть больше высоты хедера, чтобы секция была ниже него */
+}
+
+@font-face {
+    font-family: 'Good Vibes Pro';
+    /* Путь к файлу шрифта относительно CSS-файла */
+    src: url('Good Vibes Pro/GoodVibesCyr.ttf') format('woff2'),
+         url('Good Vibes Pro/GoodVibesCyr.ttf') format('woff');
+    font-weight:400;
+    font-style: normal;
+    /* Показывает запасной шрифт, пока основной грузится */
+    font-display: swap; 
+  
+}
+
+/* Применение шрифта к элементам */
+h1  {
+    font-family: 'Good Vibes Pro', cursive, sans-serif;
+  font-size: 3.2rem;
+
+  font-weight: 400;
+  color: var(--main_color);
+ padding: 1rem 0;
+
+  
+}
+  /* Стандартные стили */
+.hero h1, 
+.category h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Стили для экранов меньше 900px */
+@media (max-width: 900px) {
+  .hero h1, 
+  .category h1 {
+    font-size: 2rem;
+
+  }
+}
+
+
+/* Адаптация для мобильных (если хедер меньше на маленьких экранах) */
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 150px; /* Уменьшите, если хедер responsive и ниже */
+    }
+}
+        hr{
+            margin-bottom: 0.5%;
+        }
+
+          /* Базовый стиль для смещения якорей */
+
+
+       
+
+        body {
+              overflow-anchor: none;
+           
+           display: flex;
+             flex-direction: column;
+            justify-content: center;
+            min-height: 100vh; /* Минимальная высота равна высоте окна */
+            min-width: 430px;
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--main_color);
+          background-color: var(--four_color);
+            margin: 0 auto;
+        }
+
+
+        .cap-bar {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          height: 21px;
+          background-color: #CCBB9F;
+          width: 100%;
+          margin: 3px auto;
+          box-sizing: border-box;
+            font-style: italic;
+            
+          }
+            @media (max-width: 900px) {
+  .cap-bar {
+    display: none;
+  }
+}
+          
+         
+
+      
+        header {
+          max-width: 1220px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0.5%;
+    /* Удаляем фоновое изображение и object-fit из основного селектора */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Убедитесь, что внутри header есть элементы (например, логотип, навигация) */
+    /* и они имеют свойство position: relative; или position: absolute; */
+   /* box-shadow: var(--box-shadow);*/
+ 
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  background: 		linear-gradient(180deg, #B2E4F9 0%, #D1F9DE 100%);
+  color: #58396C;
+  /* #87CEEB - SkyBlue, #00BFFF - DeepSkyBlue */
+
+  /** background-image: url('');*/
+    background-size: cover; /* Это заменит object-fit: cover */
+    background-position: center;
+    opacity: 1; /* Устанавливаем желаемую прозрачность 0.3 */
+    z-index: -1; /* Помещаем псевдоэлемент под содержимое header */
+}
+header h1 {
+    padding: 0;
+}
+
+    .logo {
+           
+            display: flex;
+            flex-direction: column;& 
+            h3{
+                  font-style: italic;
+            }
+
+    }
+      
+   
+
+            
+
+        /* Стили для бургер-меню */
+        nav {
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--main_color);
+            padding: 0.5rem 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+         
+
+        }
+
+        nav a:hover, nav a.active {
+            background-color:var(--main_color);
+            color: #fff;
+            transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+
+
+        }
+main {
+ flex: 1 0 auto; /* Основной контент растягивается, чтобы занять доступное пространство */
+
+}
+       .burger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+           
+        }
+
+ 
+
+        .container {
+      
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+       
+
+
+.logo-emb{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+   margin-top: 3rem;
+    }
+    .logo-emb-img{
+   border-radius: 30%;
+   overflow: hidden;
+   opacity: 0.6;
+}
+@media (max-width: 1100px) and (min-width: 900px) {
+  .logo-emb-img {
+    display: none;
+  }
+}
+
+
+
+     
+/* Добавляем запятые между классами */
+.logo-emb-imga, .logo-emb-imgb, .logo-emb-imgc, .logo-emb-imgd {
+    border: 2px solid #58396C;
+    padding: 12px;
+   
+    display: inline-block; /* Чтобы padding и margin работали корректно */
+    width: 200px;          /* Желательно задать размер контейнера */
+    height: 200px;
+    border-radius: 1em;
+      background: 		linear-gradient(180deg, #B2E4F9 0%, #D1F9DE 100%);
+      box-shadow: var(--box-shadow);
+      position: relative;
+
+}
+
+/* Стили для изображений внутри без использования & (для старых браузеров) */
+.logo-emb-imga img, .logo-emb-imgb img, .logo-emb-imgc img, .logo-emb-imgd img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+        display: block;
+        position: relative;
+    }
+
+     
+    .logo-emb :hover {
+        z-index: 10;
+        scale: 1.15;
+        transition: all 0.9s ease;
+        border: transparent;
+        background:none;
+      
+    }
+
+    .logo-emb-imga{
+         transform: rotate(10deg);
+         z-index: 1;
+      
+        
+    }
+
+    .logo-emb-imga:hover::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(88, 57, 108, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+    .logo-emb-imgb{
+         transform: rotate(-10deg);
+         z-index: 2;
+      
+         
+    }
+
+     .logo-emb-imgb:hover::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(88, 57, 108, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+
+    .logo-emb-imgc{
+         transform: rotate(10deg);
+         z-index: 3;
+
+    }
+
+     .logo-emb-imgc:hover::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(88, 57, 108, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+}
+
+
+    .logo-emb-imgd{
+         transform: rotate(-10deg);
+         z-index: 4;
+    }
+
+     .logo-emb-imgd:hover::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(88, 57, 108, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+
+
+@media (max-width: 1100px) {
+  .logo-emb-imgd, .logo-emb-imgb {
+  display: none;
+
+
+  }
+    .logo-emb-imgc{
+         transform: rotate(-10deg);
+         z-index: 3;
+}
+    
+}
+@media (max-width:740px) {
+  .logo-emb-imga, .logo-emb-imgc {
+  display: none;
+  position: relative;
+  }
+  .eb {
+    display:none;
+  }
+
+}
+@media (min-width:740px){
+    .hero .mineb {
+        display: none;
+    }
+     video {
+        position: relative;
+    
+ width: 75vw; /* 2/3 от ширины экрана */
+  max-width: 100%; /* Защита от выезда за пределы родителя */
+  aspect-ratio: 1 / 1;
+    display: block; /* Убирает нижний отступ */
+    object-fit: cover;
+          background: 		linear-gradient(180deg, #B2E4F9 0%, #D1F9DE 100%);
+     border: 2px solid ;
+        border-color: #58396C;
+        border-radius: 1em;
+        padding: 12px;
+        margin: 15px auto;
+        z-index: 5;
+          overflow: hidden;
+     
+         
+}
+}
+       
+      
+
+       video {
+        position: relative;
+    
+    width: 360px;
+    height: 360px;
+    display: block; /* Убирает нижний отступ */
+    object-fit: cover;
+          background: 		linear-gradient(180deg, #B2E4F9 0%, #D1F9DE 100%);
+     border: 2px solid ;
+        border-color: #58396C;
+        border-radius: 1em;
+        padding: 12px;
+        margin: 15px auto;
+        z-index: 5;
+          overflow: hidden;
+     
+         
+}
+
+
+      
+
+        .category h3 {
+            font-size: 1.5rem;
+           
+            color: var(--main_color);
+            text-align: center;
+          //  box-shadow: var(--box-shadow);
+         
+        }
+      
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .product {
+            background-color: var(--four_color);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+             box-shadow: 0 2px 4px var(--main_color); /* Тень в нормальном состоянии */
+              
+            }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px var(--main_color);
+        }
+
+        /* Стили для слайдера */
+        .product-slider {
+            position: relative;
+            
+        }
+
+        .product-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            
+            
+        }
+
+       
+        .product-slides img  {
+  width: 100%;
+  
+  object-fit: cover;
+  flex: 0 0 100%;
+  cursor: pointer;
+
+  aspect-ratio: 4/3; 
+  background-color: #2c3e50;
+}
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .slider-controls button {
+            background:var(--three_color);
+            color: #fff;
+            border: none;
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+            font-size: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .slider-controls button:hover {
+            background:var(--main_color);
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+          /*  padding: 0.5rem;*/
+        }
+
+        .product p {
+            padding: 0 0 0.3rem 0;
+            color: var(--main_color);
+        }
+
+        .category.hidden {
+            display: none;
+        }
+
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+          
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+      
+        }
+
+  
+.modal img {
+  width: 100%;
+
+  display: block;
+  max-width: 100%; 
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+   
+        
+    
+
+        /* Адаптивность */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2rem;
+              /*  -webkit-text-stroke: 0.2px var(--four_color); /* Толщина и цвет обводки */
+                font-weight:400;
+            
+            }
+          
+              
+      
+       
+         .category {
+                margin-top: 60px;
+            }
+
+            .category h3 {
+                font-size: 1.2rem;
+                text-align: center;
+                
+
+            }
+           
+
+            .burger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: var(--four_color);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 1rem;
+          
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            
+            }
+
+            .products {
+                grid-template-columns:     1fr;
+         
+            }
+            
+
+            .services{
+                display: none;
+            }
+
+            
+          .container  .tel_footer{
+               display: none;
+            }
+          
+        }
+   
+        /* Подвал */
+footer {
+   /* Очень плавный градиент от светло-серого к еще более светлому серому */
+  /*background-image: linear-gradient(to bottom, #f0f0f0, #e0e0e0);*/
+  /* Или с малым углом для горизонтального эффекта */
+ background: 		linear-gradient(180deg, #B2E4F9 0%, #D1F9DE 100%);
+  
+  /* #87CEEB - SkyBlue, #00BFFF - DeepSkyBlue */
+  /* Убедимся, что нет повторений (хотя для однотонного это не критично) */
+  background-repeat: no-repeat;
+  /* Заполним весь фон, если нужно */
+  background-size: cover; 
+    color: var(--main_color);
+    text-align: center;
+    padding: var(--padd);
+    box-shadow: var(--box-shadow);
+}
+
+/*Решение: Сделайте фон строки прозрачным (transparent) или очень слабым оттенком последнего цвета градиента (#D1F9DE) с прозрачностью 20-30%. Это создаст мягкое приземление для иконок.*/
+
+ .social-links {
+            max-width: 1220px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            gap: 1rem;
+            justify-content:space-around;
+            padding: var(--padd);
+          /*  box-shadow: var(--box-shadow);*/
+            margin-bottom: 2rem;
+            
+    /* Вместо серого используем легкий мятно-голубой, чтобы сочеталось с хедером */
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6fffa 100%);
+    
+    /* Добавляем тонкую границу и мягкую тень для объема */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  background-repeat: no-repeat;
+  /* Заполним весь фон, если нужно */
+  background-size: cover; 
+
+     /* Чтобы блок корректно шел за хедером с z-index: -1 */
+  position: relative; 
+  z-index: 1;
+            & img {
+                display: flex;
+            }
+                        
+
+                
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+           justify-content: center; 
+            width: 32px;
+            height: 32px;
+          /*  background: var(--main_color);*/
+            color: var(--main_color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s;
+              box-shadow: 0 2px 4px var(--main_color); /* Тень в нормальном состоянии */
+                transform: scale(1); /* Начальное состояние */  
+                font-size: 24px;            
+
+        }
+
+        .social-links a:hover {
+            background: #e0e0e0;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px var(--main_color);
+
+            transform: scale(1.2); /* Состояние при наведении (или другом событии) */
+            transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+            background-image: radial-gradient(circle at 30% 30%, var(--four_color), var(--four_color));
+        }
+       
+          .hero {
+            background: var(--four_color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+      
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+       
+
+         .services {
+            padding: 1rem 0;
+            text-align: center;
+            background-color: var(--four_color);
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .services ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: start;
+        }
+
+        .btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--main_color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin: 2px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1); /* Начальное состояние */
+ 
+}
+
+.btn:hover {
+    background: var(--main_color);
+    transform: scale(1.2); /* Состояние при наведении (или другом событии) */
+transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+}
+
+    
+        .tel_footer {
+    display: inline-block;
+    padding: 0;
+    background: var(--main_color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin: 5px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1); /* Начальное состояние */
+ 
+}
+
+.tel_footer:hover {
+    background: var(--main_color);
+  
+transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+    transform: scale(1.1); /* Состояние при наведении (или другом событии) */
+
+}
+
+
+
+
+        
+         #phone-fab {
+  position: fixed;
+  bottom: 122px;
+  right: max(32px, calc((100vw - 1200px) / 2 + 32px)); /* центовка телефона в пределах body1200px*/
+ // background: var(--four_color);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: none;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+       }
+
+
+#phone-fab.visible {
+  opacity: 0.8;
+  pointer-events: auto;
+
+}
+#phone-fab i {
+  color: var(--main_color);
+  font-size: 73px;
+ 
+}
+#phone-fab.visible i {
+  animation: phone-ring .8s infinite cubic-bezier(.36,.07,.19,.97) both;
+ 
+}
+@keyframes phone-ring {
+    0% { transform: rotate(0deg);}
+   10% { transform: rotate(-10deg);}
+   20% { transform: rotate(10deg);}
+   30% { transform: rotate(-8deg);}
+   40% { transform: rotate(8deg);}
+   50% { transform: rotate(-6deg);}
+   60% { transform: rotate(6deg);}
+   70% { transform: rotate(-4deg);}
+   80% { transform: rotate(4deg);}
+   90% { transform: rotate(0deg);}
+   100% { transform: rotate(0deg);}
+}
+#phone-fab:hover i {
+    filter: drop-shadow(0px 4px 16px #CCBB9F);
+  //  box-shadow: var(--box-shadow);
+    border-radius: 50%;
+   
+            
+
+
+    
+}
+
+
+     
+        footer .container {
+            display: flex;
+           
+          justify-content: center;& a {
+            padding: 0 1rem ;
+          }
+                 
+        }
+        footer .social-links-footer {
+              display: flex;
+            gap: 1rem;
+            justify-content: center;
+        padding:0px;
+            
+        
+            margin-bottom: 0;& a {
+            display: inline-flex;
+            align-items: center;
+           justify-content: center; 
+            width: 32px;
+            height: 32px;
+          /*  background: var(--main_color);*/
+            color: var(--main_color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень в нормальном состоянии */
+                transform: scale(1); /* Начальное состояние */  
+                   & img {
+                display: flex;
+                 
+
+        }
+        
+                    
+
+        }}
+        
+        .social-links-footer a:hover {
+            background: #e0e0e0;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+            transform: scale(1.5); /* Состояние при наведении (или другом событии) */
+            transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+            background-image: radial-gradient(circle at 30% 30%, var(#CCBB9F), var(--four_color));
+        } 
+        
+/*всплывающее окно*/
+.popup-box {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 250px;
+  max-width: 90%;
+   right: max(32px, calc((100vw - 1200px) / 2 + 32px)); /* центовка телефона в пределах body1200px*/
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px var(--main_color);
+  padding: 15px;
+  z-index: 1000;
+  border-radius: 8px; & img {
+    
+    max-width: 60%;
+    
+    
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.popup-content {
+  text-decoration: none;
+  color: var(--main_color);
+  display: block;
+}
+.telegram{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 12px;
+    margin: 12px;
+}
+ul {
+    /* При необходимости уберите стандартные отступы списка */
+    padding-left: 0;
+    list-style-position: inside; /* Маркеры внутри текста */
+}
+
+li {
+    /* Смещаем текст и маркер назад */
+    padding-left: 20px; /* Величина отступа */
+    text-indent: -10px; /* Отрицательный indent для первой строки, если нужно,
+                           но лучше использовать padding для всего блока */
+}
+.about-img {
+     float:left;            /* Главное свойство для обтекания */
+  margin-right: 15px;     /* Отступ справа, чтобы текст не прилипал */
+  margin-bottom: 10px;    /* Отступ снизу */
+  max-width:  200px;;        /* Ограничение по ширине для адаптивности */
+}
+.about::after {
+     content: "";
+  display: table;
+  clear: both;            /* Предотвращает "выпадание" картинки из div */
+
+}
+.calculator {
+    display: flex;
+    justify-content: center;
+}
+#pwa-install-banner{
+display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  width: 250px;
+  max-width: 90%;
+   left: max(32px, calc((100vw - 1200px) / 2 + 32px)); /* центовка телефона в пределах body1200px*/
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px var(--main_color);
+  padding: 15px;
+  z-index: 1000;
+  border-radius: 8px; & img {
+    
+    max-width: 60%;
+    
+    
+  }
+
+}
+#pwa-install-btn {
+  background-color: #8B0000; /* Темно-бордовый цвет под стиль вышивки */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+#pwa-install-btn:hover {
+  background-color: #5A0000; /* Более темный при наведении */
+}
+#pwa-close-btn{
+    position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+ /* Затемнение фона */
+    .popup-overlay1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none; /* Скрыто по умолчанию */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Контейнер окна (макс 400х400) */
+    .popup-content1 {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1; 
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* Главное изображение */
+    .popup-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Красный баннер внутри окна */
+    .popup-badge {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background: #e50914;
+      color: #fff;
+      padding: 8px 20px;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Кнопка закрытия (крестик) */
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .popup-close:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Залипающий баннер внизу экрана (скрыт по умолчанию) */
+    .sticky-banner {
+      position: fixed;
+      bottom: 20px;
+    //  right: 20px; /* Можно заменить на left: 20px, если нужно слева */
+      right: max(32px, calc((100vw - 1200px) / 2 + 32px)); /* центовка телефона в пределах body1200px*/
+      background: #e50914;
+      color: #fff;
+      padding: 12px 24px;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+      cursor: pointer;
+      z-index: 999;
+      display: none;
+      animation: slideIn 0.3s ease-in-out;
+      border: none;
+    }
+    .sticky-banner:hover {
+      background: #b80710;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+     /* Стили для плавного перехода */
+  .popup-content img, 
+  .popup-badge {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+  }
+  
+  /* Класс, который будет временно скрывать элементы в момент смены */
+  .popup-fade-hidden {
+    opacity: 0 !important;
+  }

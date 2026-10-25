@@ -1,0 +1,59 @@
+{
+ 
+  "id": "/uzornyeskazki?source=pwa",
+  "start_url": "/?source=pwa",
+  "name": "Узорные Сказки — Студия машинной вышивки",
+  "short_name": "Узорные Сказки",
+  "description": "Студия машинной вышивки Светланы Яковлевой: эксклюзивные узоры, брендирование одежды и текстиль на заказ.",
+  "lang": "ru",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#8B0000",
+  "background_color": "#FFFFFF",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon/mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Мобильная версия Узорные Сказки"
+    },
+    {
+      "src": "icon/desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Версия для компьютеров"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Главная",
+      "url": "/#all?source=pwa_shortcut_home",
+      "description": "На главную страницу студии",
+      "icons": [{ "src": "icon/96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Контакты",
+      "url": "/#category5?source=pwa_shortcut",
+      "description": "Связаться со Светланой Яковлевой",
+      "icons": [{ "src": "icon/96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}
