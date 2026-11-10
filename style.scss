@@ -1225,3 +1225,159 @@ $font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         color: $color-success;
     }
 }
+// Переменные для кастомизации под ваш бренд
+$color-primary: #0076ff;      // Основной цвет ссылки
+$color-text-main: #2c3e50;   // Цвет главного текста
+$color-text-muted: #7f8c8d;  // Цвет подзаголовка
+$color-bg-overlay: rgba(0, 0, 0, 0.5); // Затемнение фона
+
+.calc-explanation {
+  margin-top: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    color: $color-primary;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+      
+      .calc-explanation__text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid $color-primary;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &__subtext {
+    margin: 4px 0 0 28px; // Выравнивание под текстом ссылки, пропуская иконку
+    font-size: 13px;
+    color: $color-text-muted;
+    line-height: 1.4;
+  }
+}
+
+// Стили модального окна
+.calc-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  // Состояние, когда окно открыто
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-bg-overlay;
+  }
+
+  &__container {
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+
+    .calc-modal.is-active & {
+      transform: translateY(0);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: $color-text-muted;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-text-main;
+    }
+  }
+
+  &__content {
+    color: $color-text-main;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: #000;
+        display: block;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

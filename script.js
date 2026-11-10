@@ -257,3 +257,36 @@ closeBtn.addEventListener('click', () => {
   // Запоминаем выбор, чтобы не надоедать пользователю при обновлении страниц
   sessionStorage.setItem('pwa-banner-closed', 'true');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('calcInfoModal');
+  const openBtn = document.getElementById('openCalcInfoBtn');
+  const closeBtn = document.getElementById('closeCalcInfoBtn');
+  const overlay = document.getElementById('calcModalOverlay');
+
+  // Функция открытия
+  const openModal = () => {
+    modal.classList.add('is-active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы под окном
+  };
+
+  // Функция закрытия
+  const closeModal = () => {
+    modal.classList.remove('is-active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Возвращаем прокрутку страницы
+  };
+
+  // Слушатели событий
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  // Закрытие по нажатию клавиши Esc
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-active')) {
+      closeModal();
+    }
+  });
+});

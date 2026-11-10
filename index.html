@@ -1146,6 +1146,37 @@
             <span class="calculator__result-label">Итоговая стоимость партии:</span><br>
             <strong class="calculator__total"><span id="total-price">0</span> руб.</strong>
         </div>
+
+        <div class="calc-explanation">
+  <!-- Ссылка-триггер для открытия подсказки -->
+  <button type="button" class="calc-explanation__trigger" id="openCalcInfoBtn">
+    <span class="calc-explanation__icon">?</span>
+    <span class="calc-explanation__text">Как мы считаем эту цену: из чего складывается сумма</span>
+  </button>
+  
+  <p class="calc-explanation__subtext">
+    Коротко рассказываем о коэффициентах, материалах и почему итоговая сумма — это ориентир.
+  </p>
+
+  <!-- Модальное окно с объяснением принципов -->
+  <div class="calc-modal" id="calcInfoModal" aria-hidden="true">
+    <div class="calc-modal__overlay" id="calcModalOverlay"></div>
+    <div class="calc-modal__container">
+      <button type="button" class="calc-modal__close" id="closeCalcInfoBtn" aria-label="Закрыть">&times;</button>
+      
+      <div class="calc-modal__content">
+        <h3>Как формируется эта цена и что включено в расчет</h3>
+        
+        <ul class="calc-modal__list">
+          <li><strong>Базовая стоимость:</strong> Включает в себя основные расходные материалы стандартного качества.</li>
+          <li><strong>Коэффициенты сложности:</strong> Изменяются в зависимости от выбранных вами параметров (объем, срочность, дополнительные опции).</li>
+          <li><strong>Почему сумма является ориентиром:</strong> Калькулятор производит предварительный расчет по стандартным алгоритмам. Финальная стоимость фиксируется менеджером после уточнения всех технических деталей проекта.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 </section>
 
