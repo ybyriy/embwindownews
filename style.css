@@ -84,12 +84,16 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 21px;
+  height: 25px;
   background-color: #CCBB9F;
   width: 100%;
-  margin: 3px auto;
+  /*margin: 3px auto;*/
+ 
   box-sizing: border-box;
   font-style: italic;
+  position: sticky;
+  top: 0;
+  z-index: 101;
 }
 
 @media (max-width: 900px) {
