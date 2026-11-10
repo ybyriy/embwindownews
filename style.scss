@@ -98,15 +98,17 @@ h1  {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          height: 21px;
+          height: 25px;
           background-color: #CCBB9F;
           width: 100%;
-          margin: 3px auto;
+         
           box-sizing: border-box;
             font-style: italic;
+
+            
             
           }
-            @media (max-width: 900px) {
+            @media (max-width: 840px) {
   .cap-bar {
     display: none;
   }
@@ -1047,7 +1049,7 @@ display: none; /* Скрыто по умолчанию */
       position: absolute;
       top: 20px;
       left: 0;
-      background: #e50914;
+      background: #5A0000;
       color: #fff;
       padding: 8px 20px;
       font-family: sans-serif;
@@ -1088,7 +1090,7 @@ display: none; /* Скрыто по умолчанию */
       bottom: 20px;
     //  right: 20px; /* Можно заменить на left: 20px, если нужно слева */
       right: max(32px, calc((100vw - 1200px) / 2 + 32px)); /* центовка телефона в пределах body1200px*/
-      background: #e50914;
+      background: #5A0000;
       color: #fff;
       padding: 12px 24px;
       font-family: sans-serif;
@@ -1129,3 +1131,97 @@ display: none; /* Скрыто по умолчанию */
   .popup-fade-hidden {
     opacity: 0 !important;
   }
+
+  // Переменные темы калькулятора
+$color-bg-card: #fff;
+$color-text-main: #444;
+$color-text-muted: #666;
+$color-border: #ccc;
+$color-border-card: #dcdcdc;
+$color-border-dash: #ddd;
+$color-bg-result: #f9f9f9;
+$color-success: #2e7d32;
+$shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+.calculator {
+    // Стили для самого <section>, если нужны (например, центрирование)
+    display: flex;
+    justify-content: center; 
+
+    &__container {
+        max-width: 500px;
+        width: 100%; // Чтобы корректно адаптировался под мобильные
+        border: 1px solid $color-border-card;
+        padding: 25px;
+        border-radius: 12px;
+        font-family: $font-stack;
+        background: $color-bg-card;
+        box-shadow: $shadow-card;
+        box-sizing: border-box;
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    &__field {
+        margin-bottom: 16px;
+
+        &--last {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: $color-text-main;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+
+    &__row {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__col {
+        flex: 1;
+    }
+
+    &__hint {
+        display: block;
+        font-size: 12px;
+        color: $color-text-muted;
+        margin-bottom: 3px;
+    }
+
+    &__result {
+        background: $color-bg-result;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px dashed $color-border-dash;
+
+        &-label {
+            font-size: 15px;
+            color: $color-text-muted;
+        }
+    }
+
+    &__total {
+        font-size: 28px;
+        color: $color-success;
+    }
+}

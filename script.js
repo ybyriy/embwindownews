@@ -120,20 +120,25 @@ document.querySelector('video').addEventListener('click', function() {
   }
 });
 
-
-
 function calculateOrder() {
     const pricePerStitchSqCm = 4.5; // Базовый тариф вышивки за 1 кв. см
     
+    // Получаем тип изделия и определяем стоимость пошива
     const productType = document.getElementById('product-type').value;
-    const sewingCost = (productType === 'salv') ? 250 : 
-                   (productType === 'lunch') ? 350 : 
-                   (productType === 'salvok') ? 1250 : 1350;
+    const sewingCosts = {
+        'salv': 250,
+        'lunch': 350,
+        'salvok': 1250,
+        'lunchok': 1350
+    };
+    const sewingCost = sewingCosts[productType] || 1350;
 
+    // Данные материала и размеров
     const fabricPricePerSqCm = parseFloat(document.getElementById('fabric-type').value);
     const prodWidth = parseFloat(document.getElementById('prod-width').value) || 0;
     const prodHeight = parseFloat(document.getElementById('prod-height').value) || 0;
 
+    // Данные вышивки
     const stitchWidth = parseFloat(document.getElementById('stitch-width').value) || 0;
     const stitchHeight = parseFloat(document.getElementById('stitch-height').value) || 0;
     const complexity = parseFloat(document.getElementById('stitch-type').value);
@@ -143,10 +148,8 @@ function calculateOrder() {
 
     // Скрытие/показ блока нитей, если вышивка не выбрана
     const threadBlock = document.getElementById('thread-block');
-    if (complexity === 0) {
-        threadBlock. style.display = 'none';
-    } else {
-        threadBlock.style.display = 'block';
+    if (threadBlock) {
+        threadBlock.style.display = (complexity === 0) ? 'none' : 'block';
     }
 
     // 1. Расчет стоимости чистой ткани (+4 см на швы)
@@ -167,19 +170,39 @@ function calculateOrder() {
     let totalPrice = singleProductPrice * qty;
     
     if (qty >= 4 && qty < 8) totalPrice *= 0.95; // 5% скидка от 4 шт
-    if (qty >= 8) totalPrice *= 0.90;          // 10% скидка от 8 шт
+    if (qty >= 8)            totalPrice *= 0.90; // 10% скидка от 8 шт
 
-    document.getElementById('total-price').innerText = Math.round(totalPrice);
+    // Вывод результата
+    const priceDisplay = document.getElementById('total-price');
+    if (priceDisplay) {
+        priceDisplay.innerText = Math.round(totalPrice).toLocaleString('ru-RU');
+    }
 }
 
-// Отслеживание изменений
-const inputs = ['product-type', 'fabric-type', 'prod-width', 'prod-height', 'stitch-width', 'stitch-height', 'stitch-type', 'thread-type', 'quantity'];
+// Отслеживание изменений на всех элементах формы
+const inputs = [
+    'product-type', 
+    'fabric-type', 
+    'prod-width', 
+    'prod-height', 
+    'stitch-width', 
+    'stitch-height', 
+    'stitch-type', 
+    'thread-type', 
+    'quantity'
+];
+
 inputs.forEach(id => {
-    document.getElementById(id).addEventListener('input', calculateOrder);
-    document.getElementById(id).addEventListener('change', calculateOrder);
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener('input', calculateOrder);
+        element.addEventListener('change', calculateOrder);
+    }
 });
 
-calculateOrder();
+// Первый инициализирующий расчет при загрузке страницы
+document.addEventListener('DOMContentLoaded', calculateOrder);
+
 
 // 1. Регистрация Service Worker
 if ('serviceWorker' in navigator) {
