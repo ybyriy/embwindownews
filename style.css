@@ -933,7 +933,7 @@ li {
   position: absolute;
   top: 20px;
   left: 0;
-  background: #e50914;
+  background: #8B0000;
   color: #fff;
   padding: 8px 20px;
   font-family: sans-serif;
@@ -974,7 +974,7 @@ li {
   position: fixed;
   bottom: 20px;
   right: max(32px, (100vw - 1200px) / 2 + 32px); /* центовка телефона в пределах body1200px*/
-  background: #e50914;
+  background: #8B0000;
   color: #fff;
   padding: 12px 24px;
   font-family: sans-serif;
