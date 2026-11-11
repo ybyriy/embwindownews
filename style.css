@@ -592,7 +592,7 @@ footer {
 .hero {
   background: var(--four_color);
   text-align: center;
-  padding: 2rem 0;
+  padding: 3px 0;
 }
 
 .hero p {
@@ -864,7 +864,7 @@ li {
 }
 
 #pwa-install-btn {
-  background-color: #8B0000; /* Темно-бордовый цвет под стиль вышивки */
+  background-color: #5A0000; /* Темно-бордовый цвет под стиль вышивки */
   color: white;
   border: none;
   padding: 8px 14px;
@@ -874,10 +874,11 @@ li {
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.2s;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 #pwa-install-btn:hover {
-  background-color: #5A0000; /* Более темный при наведении */
+  background-color: #8B0000; /* Более темный при наведении */
 }
 
 #pwa-close-btn {
@@ -982,7 +983,7 @@ li {
   font-size: 14px;
   letter-spacing: 1px;
   border-radius: 4px;
-  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   cursor: pointer;
   z-index: 999;
   display: none;
