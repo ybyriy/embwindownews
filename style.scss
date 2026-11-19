@@ -46,6 +46,18 @@ h1  {
 
   
 }
+
+h2 {
+ font-family: 'Good Vibes Pro', cursive, sans-serif;
+  font-size: 2.2rem;
+
+  font-weight: 400;
+  color: var(--main_color);
+ padding: 1rem 0;
+  text-align: center;
+
+
+}
   /* Стандартные стили */
 .hero h1, 
 .category h1 {
@@ -94,7 +106,7 @@ h1  {
         }
 
 
-        .cap-bar {
+     /*   .cap-bar {
           display: flex;
           justify-content: space-around;
           align-items: center;
@@ -108,11 +120,11 @@ h1  {
             
             
           }
-            @media (max-width: 840px) {
+            @media (max-width: 900px) {
   .cap-bar {
     display: none;
   }
-}
+}*/
           
          
 
@@ -228,6 +240,7 @@ main {
     justify-content: space-around;
     position: relative;
    margin-top: 3rem;
+   align-items: center;
     }
     .logo-emb-img{
    border-radius: 30%;
@@ -606,8 +619,9 @@ main {
             
             }
 
-            .products {
-                grid-template-columns:     1fr;
+           .products {
+                margin: 3em;
+              
          
             }
             
@@ -711,7 +725,7 @@ footer {
 
       
 
-        .hero p {
+        .hero p ul{
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
